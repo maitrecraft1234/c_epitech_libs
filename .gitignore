@@ -1,0 +1,4 @@
+tests_bin
+coding-style-reports.log
+*.o
+*.a
