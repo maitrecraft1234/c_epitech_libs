@@ -21,7 +21,11 @@ typedef struct {
 void *da_create(size_t size);
 void da_destroy(void *darray);
 
-    #define DAC(ar, i) (ar = da_acces(ar, sizeof(*ar) * i))[i]
+#define DA_T darrer_info_t //this is horrible but epitech coding style...
+
+#define DAC(ar, i) (ar = da_acces(ar, sizeof(*ar) * i))[i]
+#define DA_LEN(ar) (((DA_T *)ar)[-1].current_len / sizeof(*ar) - sizeof(DA_T))
+
 //used by macros
 void *da_acces(void *array, size_t conv_i);
 
