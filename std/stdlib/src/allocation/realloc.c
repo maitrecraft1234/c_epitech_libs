@@ -10,13 +10,13 @@
 
 #include "lv_stdlib.h"
 
-void *lvl_realloc(void *ptr, size_t size)
+void *lv_realloc(void *ptr, size_t size)
 {
-    void *new_ptr = lvl_malloc(size);
+    void *new_ptr = lv_malloc(size);
 
     if (new_ptr)
         for (size_t i = 0; i < size; ++i)
             ((unsigned char *)new_ptr)[i] = ((unsigned char *)ptr)[i];
-    lvl_free(ptr);
+    lv_free(ptr);
     return new_ptr;
 }

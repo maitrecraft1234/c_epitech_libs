@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-size_t lvs_strlen(char *string)
+size_t lv_strlen(char *string)
 {
     size_t len;
 

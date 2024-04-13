@@ -11,7 +11,7 @@
 #include <stddef.h>
 #include "lv_stdlib.h"
 
-void *lvl_malloc(size_t size)
+void *lv_malloc(size_t size)
 {
     return malloc(size);
 }

@@ -5,29 +5,29 @@
 ** strconcat
 */
 
-#include "lvstrings.h"
+#include "lv_string.h"
 #include <stddef.h>
 #include <stdarg.h>
 
-static size_t vaargs_len(va_list *ap)
+static size_t lvi_vaargs_len(va_list *ap)
 {
     char const *str = va_arg(*ap, const char *);
-    size_t out = lvs_strlen(str);
+    size_t out = lv_strlen(str);
 
     for (; str; str = va_arg(*ap, const char *))
-        out += lvs_strlen(str);
+        out += lv_strlen(str);
     return out;
 }
 
-static void vaargs_cat(char *dest, va_list *ap)
+static void lvi_vaargs_cat(char *dest, va_list *ap)
 {
     char const *str = va_arg(*ap, const char *);
 
     for (; str; str = va_arg(*ap, const char *))
-        (void)lvs_strcat(dest, str);
+        (void)lv_strcat(dest, str);
 }
 
-char *strconcat(const char *s, ...)
+char *lv_strconcat(const char *s, ...)
 {
     va_list ap;
     va_list ap2;
@@ -36,10 +36,10 @@ char *strconcat(const char *s, ...)
 
     va_start(ap, s);
     va_copy(ap2, ap);
-    out_len = vaargs_len(&ap) + lvs_strlen(s);
+    out_len = lvi_vaargs_len(&ap) + lv_strlen(s);
     dest = malloc(sizeof(*dest) * (out_len + 1));
     va_end(ap);
-    vaargs_cat(dest, &ap2);
+    lvi_vaargs_cat(dest, &ap2);
     va_end(ap2);
     return dest;
 }

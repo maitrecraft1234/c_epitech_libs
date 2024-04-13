@@ -8,10 +8,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-void *lvs_memset(
-        void *restrict dest,
-        int value,
-        size_t n)
+void *lv_memset(
+    void *restrict dest,
+    int value,
+    size_t n)
 {
     for (int i = n; i >= 0;) {
         i -= sizeof(uint8_t);

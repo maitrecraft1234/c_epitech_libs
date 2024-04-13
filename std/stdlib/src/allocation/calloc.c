@@ -7,9 +7,9 @@
 
 #include "lv_stdlib.h"
 
-void *lvl_calloc(size_t nmemb, size_t size)
+void *lv_calloc(size_t nmemb, size_t size)
 {
-    void *alloc = lvl_malloc(nmemb * size);
+    void *alloc = lv_malloc(nmemb * size);
 
     if (alloc == NULL)
         return NULL;

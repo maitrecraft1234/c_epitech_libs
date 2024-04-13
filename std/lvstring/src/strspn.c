@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-size_t strspn(const char *string, const char *accept)
+size_t lv_strspn(const char *string, const char *accept)
 {
     size_t len;
     bool contine = true;
@@ -21,7 +21,7 @@ size_t strspn(const char *string, const char *accept)
     return len;
 }
 
-size_t strcspn(const char *string, const char *reject)
+size_t lv_strcspn(const char *string, const char *reject)
 {
     size_t len;
     bool contine = true;

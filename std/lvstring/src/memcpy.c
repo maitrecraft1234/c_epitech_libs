@@ -6,7 +6,6 @@
 */
 
 #include <stddef.h>
-#include <stdint.h>
 
 //compiler will compile this as if it was the real memcpy
 //somehow making this bs more optimal than the function bellow
@@ -33,10 +32,10 @@
 //    }
 //    return dest;
 //}
-void *lvs_memcpy(
-        void *restrict dest,
-        const void *restrict source,
-        size_t n)
+void *lv_memcpy(
+    void *restrict dest,
+    const void *restrict source,
+    size_t n)
 {
     char *d = dest;
     char const *s = source;
@@ -46,10 +45,10 @@ void *lvs_memcpy(
     return dest;
 }
 
-void *lvs_memmove(
-        void *dest,
-        const void *source,
-        size_t n)
+void *lv_memmove(
+    void *dest,
+    const void *source,
+    size_t n)
 {
     char *d = dest;
     char const *s = source;

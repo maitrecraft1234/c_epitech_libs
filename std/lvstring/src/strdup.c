@@ -5,21 +5,21 @@
 ** strdup, strndup
 */
 
-#include "lvstrings.h"
+#include "lv_string.h"
 
-char *lvs_strndup(const char *string, size_t n)
+char *lv_strndup(const char *string, size_t n)
 {
     char *dup = ALLOCATOR(sizeof(char) * (n + 1));
 
-    lvs_memcpy(dup, string, n + 1);
+    lv_memcpy(dup, string, n + 1);
     return dup;
 }
 
-char *lvs_strdup(const char *string)
+char *lv_strdup(const char *string)
 {
-    size_t n = lvs_strlen(string);
+    size_t n = lv_strlen(string);
     char *dup = ALLOCATOR(sizeof(char) * (n + 1));
 
-    lvs_memcpy(dup, string, n + 1);
+    lv_memcpy(dup, string, n + 1);
     return dup;
 }

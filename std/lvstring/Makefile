@@ -5,7 +5,7 @@
 ## makefile for cool lib
 ##
 
-LIBNAME	=	lvstrings
+LIBNAME	=	lv_string
 
 SOURCEDIR	=	src/
 

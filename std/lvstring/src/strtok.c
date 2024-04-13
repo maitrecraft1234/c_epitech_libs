@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-char *lvs_strtok_r(char *string, const char *delim, char **save)
+char *lv_strtok_r(char *string, const char *delim, char **save)
 {
     string = string ? string : *save;
     for (size_t i = 0; *string && delim[i];) {
@@ -32,8 +32,9 @@ char *lvs_strtok_r(char *string, const char *delim, char **save)
     return string;
 }
 
-char *lvs_strtok(char *string, const char *delim)
+char *lv_strtok(char *string, const char *delim)
 {
-    static char *old;
-    return lvs_strtok_r(string, delim, &old);
+    static char *old = NULL;
+
+    return lv_strtok_r(string, delim, &old);
 }

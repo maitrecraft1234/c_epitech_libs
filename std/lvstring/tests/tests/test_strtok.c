@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 #include <string.h>
-#include "lvstrings.h"
+#include "lv_string.h"
 
 Test(test_strtok, test_strtok)
 {
@@ -8,7 +8,7 @@ Test(test_strtok, test_strtok)
     char st[] = "yoabcyoayob";
     char const *delim = "abc";
 
-    cr_assert_str_eq(lvs_strtok(s, delim), strtok(st, delim), "first it");
-    cr_assert_str_eq(lvs_strtok(NULL, delim), strtok(NULL, delim), "second it");
-    cr_assert_str_eq(lvs_strtok(NULL, delim), strtok(NULL, delim), "third it");
+    cr_assert_str_eq(lv_strtok(s, delim), strtok(st, delim), "first it");
+    cr_assert_str_eq(lv_strtok(NULL, delim), strtok(NULL, delim), "second it");
+    cr_assert_str_eq(lv_strtok(NULL, delim), strtok(NULL, delim), "third it");
 }

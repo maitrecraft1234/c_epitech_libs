@@ -17,16 +17,16 @@
 */
 
 // _Exit quivalent, halts the program with status exit code
-void lvl_sys_exit(int status);
+void lv_sys_exit(int status);
 // atexit equivalent, registers a void function(void) to be called at exit
-void lvl_at_exit(void (*function)(void));
-void lvl_exit(int status);
+void lv_atexit(void (*function)(void));
+void lv_exit(int status);
 
 // malloc equivalent, allocates memory
-void *lvl_malloc(size_t size);
+void *lv_malloc(size_t size);
 // calloc equivalent, allocates memory and sets it to 0
-void *lvl_calloc(size_t nmemb, size_t size);
+void *lv_calloc(size_t nmemb, size_t size);
 // realloc equivalent, resizes memory
-void *lvl_realloc(void *ptr, size_t size);
+void *lv_realloc(void *ptr, size_t size);
 // free equivalent, frees memory
-void lvl_free(void *ptr);
+void lv_free(void *ptr);

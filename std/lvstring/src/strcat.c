@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-char *lvs_strcat(char *dest, const char *src)
+char *lv_strcat(char *dest, const char *src)
 {
     void *dest_start = dest;
 
@@ -17,11 +17,11 @@ char *lvs_strcat(char *dest, const char *src)
         *dest = *src;
         ++dest;
         ++src;
-    } while(*(src - 1) != '\0');
+    } while (*(src - 1) != '\0');
     return dest_start;
 }
 
-char *lvs_strncat(char *dest, const char *src, size_t n)
+char *lv_strncat(char *dest, const char *src, size_t n)
 {
     void *dest_start = dest;
 

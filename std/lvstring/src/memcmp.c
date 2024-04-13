@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-int lvs_memcmp(const void *s1, const void *s2, size_t n)
+int lv_memcmp(const void *s1, const void *s2, size_t n)
 {
     register const unsigned char *str1 = s1;
     register const unsigned char *str2 = s2;

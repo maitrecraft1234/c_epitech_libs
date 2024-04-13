@@ -1,4 +1,3 @@
-
 /*
 ** EPITECH PROJECT, 2024
 ** /home/vj/code/libs/std/stdlib/src/allocation/malloc
@@ -11,7 +10,7 @@
 
 #include "lv_stdlib.h"
 
-void lvl_free(void *ptr)
+void lv_free(void *ptr)
 {
     free(ptr);
 }

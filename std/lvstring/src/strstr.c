@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-char *strstr(const char *haystack, const char *needle)
+char *lv_strstr(const char *haystack, const char *needle)
 {
     size_t j;
 

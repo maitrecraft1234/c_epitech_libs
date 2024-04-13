@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-void *memchr(const void *buffer, int search, size_t n)
+void *lv_memchr(const void *buffer, int search, size_t n)
 {
     const char *buf = buffer;
     const unsigned char s = search;

@@ -5,9 +5,9 @@
 ** strchr and strrchr
 */
 
-#include "lvstrings.h"
+#include "lv_string.h"
 
-char *strchr(const char *string, int search)
+char *lv_strchr(const char *string, int search)
 {
     while (*string) {
         if (*string == (char)search)
@@ -17,9 +17,9 @@ char *strchr(const char *string, int search)
     return (void *)0;
 }
 
-char *strrchr(const char *string, int search)
+char *lv_strrchr(const char *string, int search)
 {
-    size_t len = lvs_strlen(string);
+    size_t len = lv_strlen(string);
 
     while (len > 0 && string[len - 1]) {
         if (string[len - 1] == (char)search)
