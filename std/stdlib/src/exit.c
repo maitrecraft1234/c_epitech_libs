@@ -5,19 +5,19 @@
 ** exit function
 */
 
-#include "exit.h"
+#ifdef __GNUC__
+__attribute__((section(".text#")))
+static const unsigned char exit_bytecode[] = {0x48, 0xc7, 0xc0,
+    0x3c, 0x00, 0x00, 0x00, 0x0f, 0x05};
 
-static int lvl_builtin_exit_main(int status, char **unused)
-{
-    (void)unused;
-    return status;
-}
-
-void lvl_sys_exit(int status)
-{
-#if defined (__GNUC__)
-    __libc_start_main(lvl_builtin_exit_main, status, 0, 0, 0, 0, 0);
-    __builtin_unreachable();
+__attribute__((noreturn))
 #endif
-    while(1);
+
+void lvl_sys_exit(volatile register int status)
+{
+    #ifdef __GNUC__
+    ((void (*)())exit_bytecode)();
+    __builtin_unreachable();
+    #endif
+    while (1);
 }
