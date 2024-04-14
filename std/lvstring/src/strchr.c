@@ -19,12 +19,12 @@ char *lv_strchr(const char *string, int search)
 
 char *lv_strrchr(const char *string, int search)
 {
-    size_t len = lv_strlen(string);
+    char *last_oc = 0;
 
-    while (len > 0 && string[len - 1]) {
-        if (string[len - 1] == (char)search)
-            return (void *)(string + len - 1);
-        --len;
+    while (*string) {
+        if (*string == (char)search)
+            last_oc = (void *)string;
+        ++string;
     }
-    return (void *)0;
+    return last_oc;
 }
