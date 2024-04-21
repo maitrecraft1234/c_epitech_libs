@@ -1,0 +1,5 @@
+*.a
+*.o
+*.gc*
+san
+debug
