@@ -7,6 +7,7 @@
 
 #include <stddef.h>
 #include "lv_stdlib.h"
+#include "lvi_stdlib.h"
 
 #if defined(__GNUC__) && defined(__x86_64__)
 __attribute__((section(".text#")))
@@ -57,9 +58,7 @@ static struct lvi_atexit_stack_s {
     return &static_stack;
 }
 
-#ifdef __GNUC__
 __attribute__((noreturn))
-#endif
 void lv_exit(int status)
 {
     struct lvi_atexit_stack_s *fn_stack = lvi_atexit_stack_access(NULL);
