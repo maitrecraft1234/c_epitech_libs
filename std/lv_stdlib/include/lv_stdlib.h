@@ -45,6 +45,10 @@ div_t lv_div(int numer, int denom);
 ldiv_t lv_ldiv(long numer, long denom);
 lldiv_t lv_lldiv(long long numer, long long denom);
 
+//yet to be implemented
+void lv_qsort(void *array, size_t element_count, size_t element_size,
+    int (*cmp)(const void *, const void *));
+
 // rand equivalent, returns a pseudo-random number
 int lv_rand(void);
 // sets the seed for the pseudo-random number generator used by rand
